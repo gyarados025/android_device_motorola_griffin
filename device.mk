@@ -67,12 +67,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     Snap \
     libbson \
-    camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl
+    camera.device@3.2-impl:32 \
+    android.hardware.camera.provider@2.4-impl:32
 
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
     audio.primary.msm8996 \
     audio.a2dp.default \
     audio.r_submix.default \
@@ -89,26 +88,17 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-impl:32 \
     android.hardware.audio@2.0-service \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@2.0-service \
-    android.hardware.soundtrigger@2.0-impl \
-    android.hardware.soundtrigger@2.0-service
+    android.hardware.audio.effect@2.0-impl:32 \
+    android.hardware.audio.effect@2.0-service
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/listen_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/listen_platform_info.xml \
-    $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
-    $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9330.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9306.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9330.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9330.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9330.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9335.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
+    $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -120,7 +110,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor \
-    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-impl:64 \
     android.hardware.bluetooth@1.0-service
 
 # LineageActions
@@ -129,21 +119,18 @@ PRODUCT_PACKAGES += \
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
     services-ext
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-service.widevine
+    android.hardware.drm@1.0-impl:32 \
+    android.hardware.drm@1.0-service
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-impl:64 \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
@@ -166,17 +153,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
-# GNSS HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
-
 # Gello
 PRODUCT_PACKAGES += \
     Gello
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-impl-qti:64 \
     android.hardware.gnss@1.0-service-qti \
     libgnss \
     libcurl \
@@ -192,12 +175,12 @@ PRODUCT_COPY_FILES += \
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
 
 # health
 PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-impl:64 \
     android.hardware.health@1.0-convert \
     android.hardware.health@1.0-service
 
@@ -233,12 +216,11 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-impl:64 \
     android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service.griffin
 
 # LiveDisplay native
@@ -248,9 +230,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    $(LOCAL_PATH)/configs/media_profiles_mod0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_mod0.xml \
-    $(LOCAL_PATH)/configs/media_profiles_mod1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_mod1.xml
+    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
@@ -300,7 +280,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti \
-    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-impl:64 \
     android.hardware.thermal@1.0-service
 
 PRODUCT_COPY_FILES += \
@@ -322,10 +302,8 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.usb.rc \
-    init.oem.hw.sh \
     init.qcom.rc \
     init.qcom.power.rc \
     ueventd.qcom.rc \
@@ -353,8 +331,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    libsensorndkbridge \
-    android.hardware.sensors@1.0-impl \
+    libsensorndkbridge:64 \
+    android.hardware.sensors@1.0-impl:64 \
     android.hardware.sensors@1.0-service
 
 PRODUCT_COPY_FILES += \
@@ -363,10 +341,10 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_ril \
-    libgpu_mapper_shim \
-    libjustshoot_shim \
-    libqsap_shim
+    libshim_ril:64 \
+    libgpu_mapper_shim:32 \
+    libjustshoot_shim:32 \
+    libqsap_shim:64
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
@@ -385,12 +363,12 @@ PRODUCT_COPY_FILES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-impl:64 \
     android.hardware.vibrator@1.0-service
 
 # VR
 PRODUCT_PACKAGES += \
-    android.hardware.vr@1.0-impl \
+    android.hardware.vr@1.0-impl:64 \
     android.hardware.vr@1.0-service
 
 # WiFi HAL

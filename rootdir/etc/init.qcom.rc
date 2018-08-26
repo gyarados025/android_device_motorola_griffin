@@ -369,9 +369,6 @@ on fs
     # use /persist as phony PDS partition
     symlink /persist /pds
 
-    # wait /dev/block/bootdevice/by-name/hw
-    start vendor.oem-hw-sh
-
     # Start HW service manager early
     start hwservicemanager
 
@@ -789,11 +786,6 @@ service vendor.init_wifi /vendor/bin/wlan_carrier_bin.sh
     oneshot
     disabled
 
-service vendor.mmi-boot-sh /vendor/bin/init.mmi.boot.sh
-    class core
-    user root
-    oneshot
-
 # translate to qcom property name in order to keep the consistent with
 # our legacy property
 on property:persist.sys.qc.sub.rdump.on=*
@@ -827,12 +819,6 @@ service vendor.mmi-laser-sh /vendor/bin/init.mmi.laser.sh
     class core
     user root
     oneshot
-
-service vendor.oem-hw-sh /vendor/bin/init.oem.hw.sh
-    class core
-    user root
-    oneshot
-    disabled
 
 service vendor.mods_camd /vendor/bin/mods_camd
     class late_start
