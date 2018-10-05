@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo cos_griffin-userdebug
+add_lunch_combo aosip_griffin-userdebug
